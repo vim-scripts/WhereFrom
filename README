@@ -1,0 +1,18 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=1203
+
+The WhereFrom and WF commands search the runtimepath (see |'runtimepath'|) to determine where the setting, function, map, or command was defined.  With the "!", WhereFrom will continue looking for more than one instance.
+
+    WhereFrom[!] functionname(s)      WF[!] functionname(s)
+    WhereFrom[!] map(s)               WF[!] map(s)
+    WhereFrom[!] setting(s)           WF[!] setting(s)
+    WhereFrom[!] command(s)           WF[!] command(s)
+
+
+WF-style commands are available only if the command has not been previously defined, and are provided as a shorthand.
+
+A search is undertaken only for functions, commands, and maps, and then only if the function, command, or map is known to the currently running vim.  Determining where settings are set is done using vim's built-in method.
+
+These commands don't search all *.vim files that you may have; it only examines those that lie on your runtimepath in the common directories plugin, ftplugin, colors, compilier, indent, syntax, and the after/ variants.  In addition, it also searches the AsNeeded directory (see vimscript#915)
+
+(alpha/beta version available at http://mysite.verizon.net/astronaut/vim/index.html#WHEREFROM)
+
